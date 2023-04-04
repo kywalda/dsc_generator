@@ -34,15 +34,12 @@ class Application(Frame):
         self.dscqueue.put(0)
         self.cwqueue.put(0)
         t1 = threading.Thread(target = self.tune)
-        #t1.setDaemon(True)
         t1.daemon = True
         t1.start()
         c1 = threading.Thread(target = self.send_cwid)
-        #c1.setDaemon(True)
         c1.daemon = True
         c1.start()
         d1 = threading.Thread(target = self.send_dsc)
-        #d1.setDaemon(True)
         d1.daemon = True
         d1.start()
         

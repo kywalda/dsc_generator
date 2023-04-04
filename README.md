@@ -1,5 +1,5 @@
 # dsc_generator
-Digital Selectiv Call VHF Marine
+Digital Selective Call VHF Marine
 
 this is a fork of gm4slv dsc gen https://github.com/gm4slv/PythonProjects/tree/master/dsc_gen
 

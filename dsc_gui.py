@@ -34,13 +34,16 @@ class Application(Frame):
         self.dscqueue.put(0)
         self.cwqueue.put(0)
         t1 = threading.Thread(target = self.tune)
-        t1.setDaemon(True)
+        #t1.setDaemon(True)
+        t1.daemon = True
         t1.start()
         c1 = threading.Thread(target = self.send_cwid)
-        c1.setDaemon(True)
+        #c1.setDaemon(True)
+        c1.daemon = True
         c1.start()
         d1 = threading.Thread(target = self.send_dsc)
-        d1.setDaemon(True)
+        #d1.setDaemon(True)
+        d1.daemon = True
         d1.start()
         
         
@@ -326,7 +329,7 @@ class Application(Frame):
 
 
                 #print ("freq info ", "9" + "0" + "1" + drxchanh + drxchant + drxchanu + dtxchanh + dtxchant + dtxchanu)
-                print ("freq info ", "9" + "0" + "1" + drxchanh + drxchant + drxchanu + "9" + "0" + "1" + dtxchanh + dtxchant + dtxchanu)
+                #print ("freq info ", "9" + "0" + "1" + drxchanh + drxchant + drxchanu + "9" + "0" + "1" + dtxchanh + dtxchant + dtxchanu)
        
                 try:
                     dfreq = int( "9" + "0" + "1" + drxchanh + drxchant + drxchanu + "9" + "0" + "1" + dtxchanh + dtxchant + dtxchanu )
@@ -353,7 +356,7 @@ class Application(Frame):
                 if fmt_symbol == 102:# if  "Area"
                     
                     a_symbol = area_symbol(area)
-                    print (dfreq)
+                    #print (dfreq)
                     if len(dfreq) > 12:
                         continue
                     data_symbol = freq_symbol(dfreq)
@@ -385,7 +388,6 @@ class Application(Frame):
                     
                     a_symbol = area_symbol(area)
                     #print (quadrant)
-                    print (utc2)
     
                     eos_symbol = 127
                     cat_symbol = 108

@@ -9,3 +9,4 @@ Or you can make a virtual audio line in your computer to send the audio to a sdr
 
 For this python scripts to run you need some external modules:
 
+pip3 install tk numpy pyaudio
